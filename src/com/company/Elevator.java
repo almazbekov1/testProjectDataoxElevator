@@ -6,10 +6,10 @@ import java.util.List;
 
 public class Elevator {
 
-    private int floor = -1;
+    private int floor = 1;
     private List<Person> people = new ArrayList<>();
     private Button button = Button.UP;
-    private int aim = 1;
+    private int aim = 2;
     private String happened = "";
 
 
@@ -29,10 +29,11 @@ public class Elevator {
         return people;
     }
 
-    public Person getPerson(int id) {
-        Person person = people.get(id);
-        people.remove(id);
-        return person;
+    public void getPerson(Person person) {
+        System.out.println(people.size()+" sdlfjdf");
+        people.remove(person);
+        System.out.println(people.size());
+//        return person;
     }
 
     public void setPeople(List<Person> people) {
@@ -63,5 +64,11 @@ public class Elevator {
 
     public void setHappened(String happened) {
         this.happened = happened;
+    }
+
+    public void removePeople(List<Person> peopleRemove) {
+        for (Person person : peopleRemove) {
+            people.remove(person);
+        }
     }
 }

@@ -11,7 +11,7 @@ public class Person {
 
     public Person(int aim, int currentFloor) {
         this.aim = aim;
-        if (currentFloor< aim){
+        if (currentFloor < aim){
             button = button.UP;}else button = button.DOWN;
     }
 

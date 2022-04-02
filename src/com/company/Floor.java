@@ -5,7 +5,7 @@ import java.util.List;
 public class Floor {
 
 
-    private int count;
+    private int count = 0;
     private List<Person> people;
     private int k = 0;
     private House house;
@@ -15,9 +15,8 @@ public class Floor {
         this.people = people;
     }
 
-    public Person getPerson(int index){
+    public Person getPerson(int index) {
         Person person = people.remove(index);
-
         return person;
     }
 
@@ -44,8 +43,8 @@ public class Floor {
         return count;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setCount() {
+        count++;
     }
 
     public House getHouse() {

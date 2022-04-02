@@ -5,54 +5,33 @@ import java.util.List;
 
 public class House {
 
-    private static int step = 1;
+    private  int step = 0;
     private List<Floor> floors;
-    private String n = "house test";
+    private Elevator elevator;
 
     public House(List<Floor> floors) {
         this.floors = floors;
+        this.elevator = new Elevator();
         for (Floor floor : floors) {
             floor.setHouse(this);
         }
     }
 
-    public Floor get(int index) {
-        return floors.get(index);
-    }
 
-    public List<Floor> getFloors() {
-        return floors;
-    }
-
-    public void setFloors(List<Floor> floors) {
-        this.floors = floors;
-    }
-
-    public String getN() {
-        return n;
-    }
-
-    public void setN(String n) {
-        this.n = n;
-    }
-
-
-    public void toString(Elevator el) {
+    public void ha() {
+        Elevator el = elevator;
         System.out.println("***   step " + step++ + "   ***");
-        int count = floors.size()-1;
+        int count = floors.size();
         String s = " ";
         for (int i = floors.size() - 1; i >= 0; i--) {
-//            System.out.println(count);
-//            System.out.println(el.getFloor());
             if (count == el.getFloor()) {
-//                System.out.println("if");
-                s = el.getButton().getSymbol()+" "+el.getHappened();
+                s = el.getButton().getSymbol() + " " + el.getHappened();
             }
             for (int j = s.length(); j < 12; j++) {
-                s+=" ";
+                s += " ";
             }
             count--;
-            System.out.println("0|" + s  + "       | " + getSizePeopleFloor(floors.get(i)));
+            System.out.println(floors.get(i).getCount() + "|" + s + "       | " + getSizePeopleFloor(floors.get(i)));
             s = " ";
         }
         System.out.println();
@@ -70,4 +49,11 @@ public class House {
         return s;
     }
 
+    public List<Floor> getFloors() {
+        return floors;
+    }
+
+    public Elevator getElevator() {
+        return elevator;
+    }
 }
