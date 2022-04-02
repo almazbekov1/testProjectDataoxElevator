@@ -29,12 +29,6 @@ public class Elevator {
         return people;
     }
 
-    public void getPerson(Person person) {
-        System.out.println(people.size()+" sdlfjdf");
-        people.remove(person);
-        System.out.println(people.size());
-//        return person;
-    }
 
     public void setPeople(List<Person> people) {
         this.people = people;

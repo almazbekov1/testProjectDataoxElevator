@@ -18,7 +18,8 @@ public class House {
     }
 
 
-    public void ha() {
+
+    public void print() {
         Elevator el = elevator;
         System.out.println("***   step " + step++ + "   ***");
         int count = floors.size();
