@@ -29,7 +29,6 @@ public class Service {
             }
             nextStep(house);
         }
-
     }
 
     public int random(int wrongNumber, int min, int max) {
@@ -57,7 +56,6 @@ public class Service {
         el.removePeople(peopleRemove);
 
     }
-
 
     private void setAimElevator(House house) {
         Elevator el = house.getElevator();
@@ -87,8 +85,6 @@ public class Service {
         } else if (el.getFloor() > el.getAim()) {
             el.setButton(Button.DOWN);
         }
-
-
     }
 
     private void validate(House house) {
@@ -110,12 +106,8 @@ public class Service {
             } catch (Error e) {
                 System.out.println("error");
             }
-
         }
-
-
     }
-
 
     private void move(House house) {
         house.print();

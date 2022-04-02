@@ -10,10 +10,6 @@ public class Floor {
     private List<Person> people;
     private House house;
 
-    public Floor(List<Person> people) {
-        this.people = people;
-    }
-
     public void addPerson(Person person){
         if (people == null){
             people = new ArrayList<>();
