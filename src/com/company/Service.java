@@ -9,7 +9,6 @@ public class Service {
 
     public void nextStep(House house) {
         getOut(house);
-        validate(house);
         getIn(house);
         validate(house);
         getIn(house);
@@ -22,6 +21,7 @@ public class Service {
             for (Floor floor : house.getFloors()) {
                 count+=floor.getPeople().size();
             }
+
             count+=house.getElevator().getPeople().size();
             if (count==0){
                 System.out.println("return");
@@ -31,6 +31,7 @@ public class Service {
         }
     }
 
+    // wrongNumber - чилоа которое не должно выходит
     public int random(int wrongNumber, int min, int max) {
         Random random = new Random();
         max++;
@@ -57,7 +58,8 @@ public class Service {
 
     }
 
-    private void setAimElevator(House house) {
+    // установления новй цели для лифта
+    private void updateAimElevator(House house) {
         Elevator el = house.getElevator();
 
         if (el.getButton() == Button.UP) {
@@ -142,6 +144,6 @@ public class Service {
             }
             house.getFloors().get(currentFloor).removePeople(personRemove);
         }
-        setAimElevator(house);
+        updateAimElevator(house);
     }
 }

@@ -28,7 +28,7 @@ public class House {
             if (count == el.getFloor()) {
                 s = el.getButton().getSymbol() + " " + el.getHappened();
             }
-            for (int j = s.length(); j < 12; j++) {
+            for (int j = s.length(); j < 15; j++) {
                 s += " ";
             }
             count--;
